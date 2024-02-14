@@ -24,19 +24,21 @@
             <div class="row">
                 @foreach ($movies as $movie)
                     <div class="col-3 my-3">
-                        <div class="my-card">
-                            <div class="m-3">
-                                <h4>{{ $movie->title }}</h4>
-                                <h5>Original title: {{ $movie->original_title }}</h5>
+                        <a class=" text-decoration-none " href="{{ route('show', ['param' => $movie->id]) }}">
+                            <div class="my-card">
+                                <div class="m-3">
+                                    <h4>{{ $movie->title }}</h4>
+                                    <h5>Original title: {{ $movie->original_title }}</h5>
+                                </div>
+                                <div class="py-2">
+                                    <p>Nationality: {{ $movie->nationality }}</p>
+                                </div>
+                                <div>
+                                    <p> Release date: {{ $movie->date }}</p>
+                                    <p>Vote: {{ $movie->vote }}</p>
+                                </div>
                             </div>
-                            <div class="py-2">
-                                <p>Nationality: {{ $movie->nationality }}</p>
-                            </div>
-                            <div>
-                                <p> Release date: {{ $movie->date }}</p>
-                                <p>Vote: {{ $movie->vote }}</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>

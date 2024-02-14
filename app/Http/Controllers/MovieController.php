@@ -16,4 +16,13 @@ class MovieController extends Controller
         $movies = Movie::all();
         return view('home', compact('movies'));
     }
+
+    public function showFunction($param)
+    {
+        // Eseguo l'operazione che recuperi le informazioni del model Movie
+        // Che fa riferimento al DB
+        $movies = Movie::all();
+        $movie = $movies->find($param);
+        return view('show', compact('movie'));
+    }
 };
