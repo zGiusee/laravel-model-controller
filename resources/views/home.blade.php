@@ -15,13 +15,30 @@
 
 </head>
 
-<body>
+<body class="my-bg">
     <div>
-        <div class="container">
+        <div class=" m-5 text-danger">
+            <h1>Movies DB</h1>
+        </div>
+        <div class="container py-5">
             <div class="row">
-                <div class="col-2">
-                    {{ dd($movies) }}
-                </div>
+                @foreach ($movies as $movie)
+                    <div class="col-3 my-3">
+                        <div class="my-card">
+                            <div class="m-3">
+                                <h4>{{ $movie->title }}</h4>
+                                <h5>Original title: {{ $movie->original_title }}</h5>
+                            </div>
+                            <div class="py-2">
+                                <p>Nationality: {{ $movie->nationality }}</p>
+                            </div>
+                            <div>
+                                <p> Release date: {{ $movie->date }}</p>
+                                <p>Vote: {{ $movie->vote }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
