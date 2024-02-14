@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// IMPORTO IL MODEL
+use App\Models\Movie;
+
 class MovieController extends Controller
 {
     public function index()
     {
-        return view('home');
+        // Eseguo l'operazione che recuperi le informazioni del model Movie
+        // Che fa riferimento al DB
+        $movies = Movie::all();
+        return view('home', compact('movies'));
     }
 };
