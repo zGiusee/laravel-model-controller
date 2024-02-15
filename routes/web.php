@@ -14,4 +14,4 @@ use App\Http\Controllers\MovieController as MovieController;
 */
 
 Route::get('/', [MovieController::class, 'index'])->name('home');
-Route::get('/show/{param}', [MovieController::class, 'showFunction'])->name('show');
+Route::get('/show/{param}', [MovieController::class, 'show'])->name('show');

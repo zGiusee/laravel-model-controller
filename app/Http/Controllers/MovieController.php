@@ -17,7 +17,7 @@ class MovieController extends Controller
         return view('home', compact('movies'));
     }
 
-    public function showFunction($param)
+    public function show($param)
     {
         // Eseguo l'operazione che recuperi le informazioni del model Movie
         // Che fa riferimento al DB
